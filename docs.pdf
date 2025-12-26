@@ -1,0 +1,71 @@
+1. Project Overview
+
+This project is developed to create the backend APIs for an e-commerce application called ShoppyGlobe.
+The backend is built using Node.js, Express.js, and MongoDB Atlas.
+JWT authentication is used to secure user access, especially for cart-related operations.
+
+Using this backend API, the following operations can be performed:
+
+User registration and login with authentication
+
+Fetching all products from the database
+
+Fetching details of a single product using product ID
+
+Adding products to the shopping cart
+
+Updating the quantity of items in the cart
+
+Removing products from the cart
+
+Viewing all cart items of a logged-in user
+
+All cart-related APIs are protected routes and can only be accessed by authenticated users using a valid JWT token.
+
+Key features implemented in this project:
+
+Password hashing using bcrypt
+
+Token-based authentication using JWT
+
+Proper API error handling
+
+MongoDB Atlas cloud database for data storage
+
+2. Middleware Overview
+a) Authentication Middleware
+
+The authentication middleware is used to secure private routes such as cart APIs.
+It checks the JWT token sent in the request headers.
+
+If the token is valid, the request is allowed to continue
+
+If the token is missing or invalid, the API returns 401 Unauthorized
+
+Why this middleware is important?
+
+Ensures only logged-in users can access cart data
+
+Protects user-specific information
+
+Prevents unauthorized access to sensitive routes
+
+b) Error Handling Middleware
+
+Error handling middleware is used to manage API errors gracefully.
+
+Two main error handlers are used:
+
+notFoundHandler
+
+Triggered when a user tries to access a route that does not exist
+
+Returns a message like:
+“Route not found”
+
+This helps in providing clear responses instead of server crashes.
+
+Conclusion
+
+This backend project helped in understanding how to build secure REST APIs using Node.js and Express.
+It demonstrates authentication, database operations, middleware usage, and proper API structure for a real-world e-commerce applicatio
